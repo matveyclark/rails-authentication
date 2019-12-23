@@ -1,0 +1,13 @@
+<% if logged_in? %>
+
+    <h1>Welcome, <%= current_user.username %> </h1>
+
+<% else %>
+
+    <h1>Please choose from the options below</h1>
+
+<% end %>
+
+<%= button_to 'Register', new_user_path, method: :get %>
+<%= button_to 'Login', login_path, method: :get %>
+<%= link_to 'Logout', logout_path, method: :delete %>
